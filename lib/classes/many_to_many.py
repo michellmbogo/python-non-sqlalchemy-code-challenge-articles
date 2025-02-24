@@ -38,9 +38,9 @@ class Article:
     @author.setter
     def author(self, value):
          
-         if type(value) is not Author:
-         raise ValueError("The author must be an instance of the Author class.")
-        self._author = value
+         if type(value,Author): 
+         raise ValueError("Author must be of type Author.")
+         self._author = value
 
     @property
     def magazine(self):
