@@ -23,9 +23,11 @@ class Article:
     def title(self, value):
         # Prevent modification of the title
         if not isinstance(value, str):
-        return  # Ignore non-string assignments without any feedback
-        if 5 <= len(value) <= 50:
-        if not hasattr(self, "_title"):
+            return  # Ignore non-string assignments without any feedback
+        if len(value) < 5 or len(value) > 50:
+            return
+        if hasattr(self, "_title"):
+            return
         self._title = value  # Assign title only if it's within valid length and not previously set
 
     @property
